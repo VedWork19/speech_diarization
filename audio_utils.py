@@ -47,13 +47,13 @@ def interactive_diarization(duration,similarity_dict, wav, wav_splits, x_crop=5,
         outfile.write(json_obj)
 
     if file[-3:]=="mp3" or file[-3:]=="wav":
-        os.system("python split_concatinate.py audio_data/"+file)
+        os.system("python3 split_concatinate.py audio_data/"+file)
     else:
-        os.system("python split_concatinate.py audio_data/Final_Video.mp4")
+        os.system("python3 split_concatinate.py audio_data/Final_Video.mp4")
     if duration <= 120:
-        os.system("python speech_recognition_short.py")
+        os.system("python3 speech_recognition_short.py")
     else:
-        os.system("python speech_recognition_long.py")
+        os.system("python3 speech_recognition_long.py")
     os.system("rm -r Output")
     
 def create_labelling(labels,wav_splits):
